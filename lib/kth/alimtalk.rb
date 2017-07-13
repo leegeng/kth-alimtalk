@@ -3,8 +3,10 @@ require "kth/alimtalk/version"
 module Kth
   module Alimtalk
     class Client
-      BASE_URL = "http://api.apistore.co.kr".freeze
       attr_accessor :client_id, :key
+
+      BASE_URL = "http://api.apistore.co.kr".freeze
+      # TODO. 코드 및 메세지 정의 맵핑 추가
 
       def initialize(client_id, key)
         self.client_id = client_id
@@ -99,15 +101,14 @@ module Kth
           req.body = params
         end
 
-        result = JSON.parse(res)
-        result
+        JSON.parse(res)
       end
 
       def send_get_request(url)
         conn = Faraday.new(BASE_URL)
         res = conn.get(url)
 
-        result = JSON.parse(res)
+        JSON.parse(res)
       end
     end
   end
