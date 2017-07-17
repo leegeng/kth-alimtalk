@@ -1,4 +1,5 @@
 require "kth/alimtalk/version"
+require "kth/case_sensitive_string"
 
 module Kth
   module Alimtalk
