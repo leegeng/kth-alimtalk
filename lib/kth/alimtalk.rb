@@ -101,14 +101,14 @@ module Kth
           req.body = params
         end
 
-        JSON.parse(res)
+        JSON.parse(res.body)
       end
 
       def send_get_request(url)
         conn = Faraday.new(BASE_URL)
         res = conn.get(url)
 
-        JSON.parse(res)
+        JSON.parse(res.body)
       end
     end
   end
