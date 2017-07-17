@@ -106,7 +106,11 @@ module Kth
 
       def send_get_request(url)
         conn = Faraday.new(BASE_URL)
-        res = conn.get(url)
+        res = conn.get do |req|
+          req.url url
+          req.headers[Kth::Alimtalk::CaseSensitiveString.new('x-waple-authorization')] = key
+          req.headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
+        end
 
         JSON.parse(res.body)
       end
