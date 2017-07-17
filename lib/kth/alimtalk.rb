@@ -41,7 +41,7 @@ module Kth
         send_get_request request_url
       end
 
-      def templates(options)
+      def templates(options = {})
         request_url = "/kko/1/tamplate/list/#{client_id}?"
         if options.present?
           request_url += "TEMPLATE_CODE=##{options['template_code']}&" if options['template_code']
