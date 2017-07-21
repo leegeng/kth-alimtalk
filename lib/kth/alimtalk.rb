@@ -42,7 +42,7 @@ module Kth
       end
 
       def templates(options = {})
-        request_url = "/kko/1/tamplate/list/#{client_id}?"
+        request_url = "/kko/1/template/list/#{client_id}?"
         if options.present?
           request_url += "TEMPLATE_CODE=##{options['template_code']}&" if options['template_code']
           request_url += "STATUS=#{options['status']}&" if options['status']
