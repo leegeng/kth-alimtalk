@@ -17,19 +17,19 @@ module Kth
       def send_message(phone_number, callback, msg, template_code, failed_type, options)
         request_url = "/kko/1/msg/#{client_id}"
         params = {
-          'PHONE' => phone_number,
-          'CALLBACK' => callback,
-          'MSG' => msg,
-          'TEMPLATE_CODE' => template_code,
-          'FAILED_TYPE' => failed_type
+          'phone' => phone_number,
+          'callback' => callback,
+          'msg' => msg,
+          'template_code' => template_code,
+          'failed_type' => failed_type
         }
 
         if options.present?
-          params['REQDATE'] = options['request_date'].strftime("%Y%m%d%H%M%S") if options['request_date']
-          params['URL'] = options['url'] if options['url']
-          params['URL_BUTTON_TXT'] = options['url_button_text'] if options['url_button_text']
-          params['FAILED_SUBJECT'] = options['failed_subject'] if options['failed_subject']
-          params['FAILED_MSG'] = options['failed_msg']
+          params['reqdate'] = options['request_date'].strftime("%Y%m%d%H%M%S") if options['request_date']
+          params['url'] = options['url'] if options['url']
+          params['url_button_text'] = options['url_button_text'] if options['url_button_text']
+          params['failed_subject'] = options['failed_subject'] if options['failed_subject']
+          params['failed_msg'] = options['failed_msg']
         end
 
         send_post_request request_url, params
@@ -84,19 +84,19 @@ module Kth
       def msg_test(phone_number, callback, msg, template_code, failed_type, options)
         request_url = "/kko/1/msg_test/#{client_id}"
         params = {
-          'PHONE' => phone_number,
-          'CALLBACK' => callback,
-          'MSG' => msg,
-          'TEMPLATE_CODE' => template_code,
-          'FAILED_TYPE' => failed_type
+          'phone' => phone_number,
+          'callback' => callback,
+          'msg' => msg,
+          'template_code' => template_code,
+          'failed_type' => failed_type
         }
 
         if options.present?
-          params['REQDATE'] = options['request_date'].strftime("%Y%m%d%H%M%S") if options['request_date']
-          params['URL'] = options['url'] if options['url']
-          params['URL_BUTTON_TXT'] = options['url_button_text'] if options['url_button_text']
-          params['FAILED_SUBJECT'] = options['failed_subject'] if options['failed_subject']
-          params['FAILED_MSG'] = options['failed_msg']
+          params['reqdate'] = options['request_date'].strftime("%Y%m%d%H%M%S") if options['request_date']
+          params['url'] = options['url'] if options['url']
+          params['url_button_text'] = options['url_button_text'] if options['url_button_text']
+          params['failed_subject'] = options['failed_subject'] if options['failed_subject']
+          params['failed_msg'] = options['failed_msg']
         end
 
         send_post_request request_url, params
