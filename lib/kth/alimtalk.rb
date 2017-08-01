@@ -36,7 +36,7 @@ module Kth
       end
 
       def report(cmid)
-        request_url = "/kko/1/report/#{client_id}?CMID=#{cmid}"
+        request_url = "/kko/1/report/#{client_id}?cmid=#{cmid}"
 
         send_get_request request_url
       end
