@@ -53,7 +53,7 @@ module Kth
 
       def register_callback(send_phone_number, comment, pin_type = 'SMS')
         phone_number = send_phone_number.gsub("-", "")
-        request_url = "/kko/1/sendnumber/save/#{client_id}"
+        request_url = "/kko/2/sendnumber/save/#{client_id}"
         params = {
           'sendnumber' => phone_number,
           'comment' => comment,
@@ -65,7 +65,7 @@ module Kth
 
       def verify_callback(send_phone_number, comment, pin_type, pin_code)
         phone_number = send_phone_number.gsub("-", "")
-        request_url = "/kko/1/sendnumber/save/#{client_id}"
+        request_url = "/kko/2/sendnumber/save/#{client_id}"
         params = {
           'sendnumber' => phone_number,
           'comment' => comment,
