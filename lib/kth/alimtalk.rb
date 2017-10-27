@@ -27,7 +27,7 @@ module Kth
         if options.present?
           params['reqdate'] = options['request_date'].strftime("%Y%m%d%H%M%S") if options['request_date']
           params['url'] = options['url'] if options['url']
-          params['url_button_text'] = options['url_button_text'] if options['url_button_text']
+          params['url_button_txt'] = options['url_button_txt'] if options['url_button_txt']
           params['failed_subject'] = options['failed_subject'] if options['failed_subject']
           params['failed_msg'] = options['failed_msg']
         end
@@ -94,7 +94,7 @@ module Kth
         if options.present?
           params['reqdate'] = options['request_date'].strftime("%Y%m%d%H%M%S") if options['request_date']
           params['url'] = options['url'] if options['url']
-          params['url_button_text'] = options['url_button_text'] if options['url_button_text']
+          params['url_button_txt'] = options['url_button_txt'] if options['url_button_txt']
           params['failed_subject'] = options['failed_subject'] if options['failed_subject']
           params['failed_msg'] = options['failed_msg']
         end
@@ -108,7 +108,7 @@ module Kth
         conn = Faraday.new(BASE_URL)
         res = conn.post do |req|
           req.url url
-          req.headers[Kth::Alimtalk::CaseSensitiveString.new('x-waple-authorization')] = key
+          req.headers[CaseSensitiveString.new('x-waple-authorization')] = key
           req.headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
           req.body = params
         end
