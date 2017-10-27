@@ -35,7 +35,7 @@ c = Kth::Alimtalk::Client.new("API스토어ID", "API STORE KEY")
 # options: {
 #   request_date: 발송시간 (Time.new(2017, 07, 17, 19, 00, 00))
 #   url: 알림톡 버튼 타입 URL (승인된 template 과 불일치시 전송실패)
-#   url_button_text: 알림톡 버튼 타입 버튼 TEXT (승인된 template과 불일치시 전송실패)
+#   url_button_txt: 알림톡 버튼 타입 버튼 TEXT (승인된 template과 불일치시 전송실패)
 #   failed_subject: 카카오알림톡 전송 실패 시 전송할 제목 (SMS 미사용)
 #   failed_msg: 카카오알림톡 전송 실패 시 전송할 내용
 #   params['REQDATE'] = options['request_date'].strftime("%Y%m%d%H%M%S") if options['request_date']
